@@ -1,0 +1,52 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/Login/Login",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7102"
+        }
+      ],
+      "UpstreamPathTemplate": "/login",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      {
+        "DownstreamPathTemplate": "/api/User/AddUser",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": "7102"
+          }
+        ],
+        "UpstreamPathTemplate": "/NewUser",
+        "UpstreamHttpMethod": [ "GET", "POST" ],
+        "AuthenticationOptions": {
+          "AuthenticationProviderKey": "Bearer",
+          "AllowedScopes": []
+        },
+        {
+          "DownstreamPathTemplate": "/api/User/FetchAllUsers",
+          "DownstreamScheme": "https",
+          "DownstreamHostAndPorts": [
+            {
+              "Host": "localhost",
+              "Port": "7102"
+            }
+          ],
+          "UpstreamPathTemplate": "/AllUsers",
+          "UpstreamHttpMethod": [ "GET", "POST" ],
+          "AuthenticationOptions": {
+            "AuthenticationProviderKey": "Bearer",
+            "AllowedScopes": []
+          }
+  ],
+  "GlobalConfiguration": {
+    "BaseURL": "https://localhost:7032"
+  }
+}
